@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mi Estacionamiento</title>
+
+    <link href="https//fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="assets/css/style-starter.css">
+    <link rel="stylesheet" href="assets/js/script.js">
+</head>
+
+<body>
+
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="index.html">Mi Estacionamiento
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="courses.html">Estacionamientos</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Reg&iacute;strate
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="RegistrarteAuto.html">Arrendatario</a>
+                                <a class="dropdown-item" href="RegistrarteDueno.html">Estacionamiento</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.php">Inicio de Sesi&oacute;n</a>
+                        </li>                    </ul>
+
+                    <div class="header-search position-relative">
+                        <div class="search-right mx-lg-2">
+                            <a href="#search" class="btn search-btn p-0" title="search">
+                                <i class="fas fa-search"></i></a>
+
+                            <div id="search" class="pop-overlay">
+                                <div class="popup">
+                                    <form action="#search" method="GET" class="search-box">
+                                        <input type="search" placeholder="Enter Keyword..." name="search"
+                                            required="required" autofocus="">
+                                        <button type="submit" class="btn"><span class="fas fa-search"
+                                                aria-hidden="true"></span></button>
+                                    </form>
+                                </div>
+                                <a class="close" href="#close">×</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cont-ser-position">
+                    <nav class="navigation">
+                        <div class="theme-switch-wrapper">
+                            <label class="theme-switch" for="checkbox">
+                                <input type="checkbox" id="checkbox">
+                                <div class="mode-container">
+                                    <i class="gg-sun"></i>
+                                    <i class="gg-moon"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </nav>
+                </div>
+
+            </nav>
+        </div>
+    </header>
+
+    <section class="inner-banner py-5">
+        <div class="w3l-breadcrumb py-lg-5">
+            <div class="container pt-4 pb-sm-4">
+                <h4 class="inner-text-title pt-5">Estacionamientos</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="active"><i class="fas fa-angle-right"></i>Estacionamientos</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="w3l-grids-block-5 py-5">
+        <div class="container py-md-5 py-4">
+            <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+                <p class="text-uppercase">Escogue tu estacionamientos</p>
+            </div>
+
+
+            <div id="mapa_content">
+                <div id="mapa"></div>
+
+                <script src="assets/js/script.js"></script>
+
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQnoDXTVwscl0OVMrCwe-gVwejxZNFGHQ&callback=initMap">
+                    </script>
+            </div>
+            <style>
+                #mapa {
+                    height: 500px;
+                    width: 100%;
+                    margin-bottom: 5vh;
+                }
+            </style>
+
+            <a class="btn btn-style btn-style-3" href="arrendar.html" role="button" aria-haspopup="true"
+                aria-expanded="false" style="margin-bottom: 4vh;"> Arrienda </a>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="coursecard-single">
+                        <div class="grids5-info position-relative">
+                            <img src="assets/images/c1.jpg" alt="" class="img-fluid" />
+                            <div class="meta-list">
+                                <a href="courses.html">aeropuerto santiago</a>
+                            </div>
+                        </div>
+                        <div class="content-main-top">
+                            <div class="content-top mb-4 mt-3">
+                                <ul class="list-unstyled d-flex align-items-center justify-content-between">
+                                    <li> Libres</li>
+                                    <li> <i class="fas fa-star"></i> 4.5</li>
+                                </ul>
+                            </div>
+                            <h4><a href="courses.html">Estacionamiento</a></h4>
+                            <p>Este estacionamiento se encuentra en aeropuerto santiago </p>
+                            <div class="top-content-border d-flex align-items-center justify-content-between mt-4 pt-4">
+                                <h6>12,5 pesos por minuto</h6>
+                                <a class="btn btn-style-primary" href="info.html">Ver zonas<i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+                    <div class="coursecard-single">
+                        <div class="grids5-info position-relative">
+                            <img src="assets/images/c2.jpg" alt="" class="img-fluid" />
+                            <div class="meta-list">
+                                <a href="courses.html" class="sec-2">Plaza de armas</a>
+                            </div>
+                        </div>
+                        <div class="content-main-top">
+                            <div class="content-top mb-4 mt-3">
+                                <ul class="list-unstyled d-flex align-items-center justify-content-between">
+                                    <li> Libres</li>
+                                    <li> <i class="fas fa-star"></i> 4.3</li>
+                                </ul>
+                            </div>
+                            <h4><a href="courses.html">Estacionamiento</a></h4>
+                            <p>Este estacionamiento se encuentra en plaza de armas</p>
+                            <div class="top-content-border d-flex align-items-center justify-content-between mt-4 pt-4">
+                                <h6>47 pesos por minuto</h6>
+                                <a class="btn btn-style-primary" href="info.html">Ver zonas<i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
+                    <div class="coursecard-single">
+                        <div class="grids5-info position-relative">
+                            <img src="assets/images/c3.jpg" alt="" class="img-fluid" />
+                            <div class="meta-list">
+                                <a href="courses.html" class="sec-3">Providencia</a>
+                            </div>
+                        </div>
+                        <div class="content-main-top">
+                            <div class="content-top mb-4 mt-3">
+                                <ul class="list-unstyled d-flex align-items-center justify-content-between">
+                                    <li> Libres</li>
+                                    <li> <i class="fas fa-star"></i> 4.2</li>
+                                </ul>
+                            </div>
+                            <h4><a href="courses.html">Estacionamiento</a></h4>
+                            <p>Este estacionamiento se encuentra en Providencia</p>
+                            <div class="top-content-border d-flex align-items-center justify-content-between mt-4 pt-4">
+                                <h6>47 pesos por minuto</h6>
+                                <a class="btn btn-style-primary" href="info.html">Ver zonas<i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <div class="coursecard-single">
+                        <div class="grids5-info position-relative">
+                            <img src="assets/images/c4.jpg" alt="" class="img-fluid" />
+                            <div class="meta-list">
+                                <a href="courses.html">alto las condes</a>
+                            </div>
+                        </div>
+                        <div class="content-main-top">
+                            <div class="content-top mb-4 mt-3">
+                                <ul class="list-unstyled d-flex align-items-center justify-content-between">
+                                    <li> Libres</li>
+                                    <li> <i class="fas fa-star"></i> 5.0</li>
+                                </ul>
+                            </div>
+                            <h4><a href="courses.html">Estacionamiento</a></h4>
+                            <p>Este estacionamiento se encuentra en alto las condes</p>
+                            <div class="top-content-border d-flex align-items-center justify-content-between mt-4 pt-4">
+                                <h6>12 pesos por minuto</h6>
+                                <a class="btn btn-style-primary" href="info.html">Ver zonas<i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <div class="coursecard-single">
+                        <div class="grids5-info position-relative">
+                            <img src="assets/images/c5.jpg" alt="" class="img-fluid" />
+                            <div class="meta-list">
+                                <a href="courses.html" class="sec-2">clinica santa maria</a>
+                            </div>
+                        </div>
+                        <div class="content-main-top">
+                            <div class="content-top mb-4 mt-3">
+                                <ul class="list-unstyled d-flex align-items-center justify-content-between">
+                                    <li> Libres</li>
+                                    <li> <i class="fas fa-star"></i> 4.6</li>
+                                </ul>
+                            </div>
+                            <h4><a href="courses.html">Estacionamiento</a></h4>
+                            <p>Este estacionamiento se encuentra en clinica santa maria</p>
+                            <div class="top-content-border d-flex align-items-center justify-content-between mt-4 pt-4">
+                                <h6>12 pesos por minuto</h6>
+                                <a class="btn btn-style-primary" href="info.html">Ver zonas<i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <div class="coursecard-single">
+                        <div class="grids5-info position-relative">
+                            <img src="assets/images/c6.jpg" alt="" class="img-fluid" />
+                            <div class="meta-list">
+                                <a href="courses.html" class="sec-3">Plaza centenario</a>
+                            </div>
+                        </div>
+                        <div class="content-main-top">
+                            <div class="content-top mb-4 mt-3">
+                                <ul class="list-unstyled d-flex align-items-center justify-content-between">
+                                    <li> Ocupado</li>
+                                    <li> <i class="fas fa-star"></i> 4.8</li>
+                                </ul>
+                            </div>
+                            <h4><a href="courses.html">Estacionamiento</a></h4>
+                            <p>Este estacionamiento se encuentra en plaza centenario</p>
+                            <div class="top-content-border d-flex align-items-center justify-content-between mt-4 pt-4">
+                                <h6>15 pesos por minuto</h6>
+                                <a class="btn btn-style-primary" href="info.html">Ver zonas<i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination-style text-center mt-5">
+                <ul>
+                    <li> <a href="#none" class="not-allowed" disabled="">
+                            <span class="fa fa-angle-double-left" aria-hidden="true"></span>
+                        </a>
+                    </li>
+                    <li><a class="active" href="#page">1</a></li>
+                    <li>
+                        <a href="#page">2</a>
+                    </li>
+                    <li>
+                        <a href="#page">3</a>
+                    </li>
+                    <li>
+                        <a href="#page"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+    </button>
+    <script>
+
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+
+
+    <script src="assets/js/theme-change.js"></script>
+
+
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+
+    <script src="assets/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
